@@ -1,16 +1,19 @@
-// čia pateikti visus required/import metodus
-// susikurti pavyzdinius objektus iš class
-// parodyti, jog sukurti metodai tikrai veikia, t.y.
-// prieš tai suvesta informacija turi įtaką likusiems
-// kviečiamiems metodams
+const Schedule = require('./Schedule');
 
+const school = new Schedule();
 
-const Schedule = require("./Schedule");
+school.intro();
+//Lessons begins at 9:00
 
-const schedule = new Schedule('School');
+school.setNewLessonsBegins([10, 0]);
 
-schedule.intro();
-// This is School schedule.
+school.intro();
+//Lessons begins at 10:00
 
-schedule.times();
-//
+school.addBreak(10);
+school.addBreak(15);
+
+school.printSchedule();
+// 1. 10:00 - 10:45
+// 1. 10:55 - 11:40
+// 1. 11:55 - 12:40
