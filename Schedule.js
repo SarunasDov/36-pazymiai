@@ -1,6 +1,6 @@
 class Schedule {
     constructor() {
-        this.lessonBegins = [9, 0];
+        this.lessonsBegins = [9, 0];
         this.lessonDuration = [0, 45];
         this.breaks = [];
     }
@@ -8,18 +8,18 @@ class Schedule {
     intro() {
         const h = this.lessonsBegins[0];
         const m = this.lessonsBegins[1];
-        console.log(`lessons begins at ${this.formatTime(h, m)}`);
+        console.log(`Lessons begins at ${this.formatTime(h, m)}`);
     }
 
     setNewLessonsBegins(newTime) {
-        this.lessonBegins = newTime;
+        this.lessonsBegins = newTime;
     }
 
     setNewLessonDuration(newDuration) {
         this.lessonDuration = newDuration;
     }
 
-    adBreak(breakDuration) {
+    addBreak(breakDuration) {
         this.breaks.push(breakDuration);
         console.log(`${this.breaks.length}) break is ${breakDuration} minutes long`);
     }
@@ -32,8 +32,8 @@ class Schedule {
         const firstFormatedStart = this.formatTime(h, m);
         const firstFormatedEnd = this.formatTime(...firstEndTime);
 
-        console.log('School schedule');
-        console.log('===============');
+        console.log('School schedule:');
+        console.log('================');
         console.log(`${++lessonNumber}. ${firstFormatedStart} - ${firstFormatedEnd}`);
 
         let lastTime = firstEndTime;
